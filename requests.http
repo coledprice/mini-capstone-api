@@ -9,3 +9,12 @@ GET http://localhost:3000/products.json
 ### PRODUCTS CREATE
 
 POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "tomato plant",
+  "price": "1.50",
+  "image_url": "https://media.istockphoto.com/photos/harvesting-organic-tomatoes-on-the-farm-picture-id1280331878?s=612x612",
+  "description": "red and tasty"
+}
+

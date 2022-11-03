@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   def first_product
     product = Product.first
     render json: product.as_json
-    
   end
 
   def show
@@ -16,7 +15,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(name: "Hydrangea", price: 30, image_url: "https://media.istockphoto.com/photos/pink-and-purple-hydrangea-flowers-lacecap-hydrangea-bush-shady-garden-picture-id507187093?s=612x612", description: "beautiful plant")
+    product = Product.new(name: params["name"], price: params["price"], image_url: params["image_url"], description: params["description"])
     product.save
     render json: product.as_json
   end
