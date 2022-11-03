@@ -18,3 +18,10 @@ Content-Type: application/json
   "description": "red and tasty"
 }
 
+### PRODUCTS UPDATE
+PATCH http://localhost:3000/products/8.json
+Content-Type: application/json
+
+{
+  "name": ""
+}

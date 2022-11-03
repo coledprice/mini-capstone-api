@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
- get "/products" => "products#index"
+  get "/products" => "products#index"
 
- get "/first_product", controller: "products", action: "first_product"
+  get "/first_product", controller: "products", action: "first_product"
 
- get "/products/:id" => "products#show"
+  get "/products/:id" => "products#show"
 
- post "/products" => "products#create"
+  post "/products" => "products#create"
 
-
+  patch "/products/:id" => "products#update"
 end
