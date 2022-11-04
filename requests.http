@@ -25,3 +25,6 @@ Content-Type: application/json
 {
   "name": ""
 }
+
+### PRODUCTS DELETE
+DELETE http://localhost:3000/products/10.json
