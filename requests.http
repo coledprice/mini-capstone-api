@@ -12,18 +12,19 @@ POST http://localhost:3000/products.json
 Content-Type: application/json
 
 {
-  "name": "tomato plant",
-  "price": "1.50",
-  "image_url": "https://media.istockphoto.com/photos/harvesting-organic-tomatoes-on-the-farm-picture-id1280331878?s=612x612",
-  "description": "red and tasty"
+  "name": "Test plant2",
+  "price": 20,
+  "image_url": "none",
+  "description": "test description"
 }
 
 ### PRODUCTS UPDATE
-PATCH http://localhost:3000/products/8.json
+PATCH http://localhost:3000/products/9.json
 Content-Type: application/json
 
 {
-  "name": ""
+  "name": "Test Pumpkin",
+  "price": 0
 }
 
 ### PRODUCTS DELETE

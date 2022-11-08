@@ -17,8 +17,11 @@ class ProductsController < ApplicationController
 
   def create
     product = Product.new(name: params["name"], price: params["price"], image_url: params["image_url"], description: params["description"])
-    product.save
-    render json: product.as_json
+    if product.save
+      render json: product.as_json
+    else
+      render json: { errors: product.errors.full_messages }
+    end
   end
 
   def update
@@ -28,10 +31,11 @@ class ProductsController < ApplicationController
     product.price = params["price"] || product.price
     product.image_url = params["image_url"] || product.image_url
     product.description = params["description"] || product.description
-    product.save
-    @product = product
-
-    render :show
+    if product.save
+      render json: product.as_json
+    else
+      render json: { errors: product.errors.full_messages }
+    end
   end
 
   def destroy
