@@ -5,6 +5,7 @@ GET http://localhost:3000/products/1.json
 ### PRODUCTS INDEX
 
 GET http://localhost:3000/products.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjgxOTMzMTV9.hTXffuD9da9HOcZxWwVt71e-h5-GonmDvSHUwBDh-EE
 
 ### PRODUCTS CREATE
 
@@ -19,13 +20,34 @@ Content-Type: application/json
 }
 
 ### PRODUCTS UPDATE
-PATCH http://localhost:3000/products/9.json
+PATCH http://localhost:3000/products/17.json
 Content-Type: application/json
 
 {
-  "name": "Test Pumpkin",
-  "price": 0
+  "name": "New Plant",
+  "url": "https://live.staticflickr.com/7076/27570338206_ccb94fb8bf_m.jpg"
 }
 
 ### PRODUCTS DELETE
 DELETE http://localhost:3000/products/10.json
+
+### USERS CREATE
+
+POST http://localhost:3000/users.json 
+Content-Type: application/json
+
+{
+  "name": "Hank Hill",
+  "email": "hhill@example.com",
+  "password": "password2",
+  "password_confirmation": "password2"
+}
+
+### SESSIONS CREATE
+POST http://localhost:3000/sessions.json 
+Content-Type: application/json
+
+{
+  "email": "hhill@example.com",
+  "password": "password2"
+}
