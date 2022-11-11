@@ -51,3 +51,24 @@ Content-Type: application/json
   "email": "hhill@example.com",
   "password": "password2"
 }
+
+### ORDERS CREATE
+POST http://localhost:3000/orders.json
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjgyNzc4NzB9.O_1_KnRloS15ocn0oC-10CReGa92qSJBHYwkMnjZHeA
+
+{
+  "user_id": 2,
+  "quantity": 1,
+  "product_id": 2,
+  "tax": 0.09,
+  "total": 1.50,
+  "subtotal": 1.63
+ 
+}
+
+### ORDERS SHOW
+GET http://localhost:3000/orders/2.json
+
+### ORDERS INDEX
+GET http://localhost:3000/orders.json
