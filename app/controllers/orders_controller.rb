@@ -1,4 +1,6 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_user
+
   def create
     product = Product.find_by(id: params[:product_id])
     calculated_subtotal = product.price * params[:quantity].to_i
@@ -12,10 +14,11 @@ class OrdersController < ApplicationController
       tax: calculated_tax,
       total: calculated_total,
     )
-    if @order.save
+    if current_user
+      @order.save
       render :show
     else
-      render json: { errors: order.errors.full_messages }
+      render json: { errors: order.errors.full_messages }, status: :unauthorized
     end
   end
 
@@ -26,7 +29,11 @@ class OrdersController < ApplicationController
   end
 
   def index
-    @orders = current_user.orders
-    render :index
+    if current_user
+      @orders = current_user.orders
+      render :index
+    else
+      render json: { messeage: "You must log in" }, status: :unauthorized
+    end
   end
 end

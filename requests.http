@@ -55,7 +55,7 @@ Content-Type: application/json
 ### ORDERS CREATE
 POST http://localhost:3000/orders.json
 Content-Type: application/json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2NjgyNzc4NzB9.O_1_KnRloS15ocn0oC-10CReGa92qSJBHYwkMnjZHeA
+
 
 {
   "quantity": 1,
